@@ -7,13 +7,14 @@
 public class Main {
   public static void main(String[] args) {
     System.out.println("hello, world!");
-
+    int[] nums = {5, 9, 3, 12, 7, 3, 11, 5};
     Lab1 lab = new Lab1();
+  
     System.out.println(lab.increment(1));
     System.out.println(lab.max(8, 127));
     System.out.println(lab.min(90, 46));
+    System.out.println(lab.sum(nums));
 
-  }
 }     
 
 // Add all of the methods here
@@ -29,6 +30,7 @@ class Lab1 {
         return b;
     }
   }
+
   public int min(int a, int b) {
     if (a < b) {
         return a;
@@ -37,4 +39,27 @@ class Lab1 {
         return b;
     }
   }
+
+  public int sum(int[] nums) {
+    int sum = 0;
+    int length = nums.length;
+    for(int i = 0; i < length; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+  public int average(int[] nums) {
+    int avg;
+    int sum = 0;
+    int length = nums.length;
+    for(int a : nums ) {
+      sum += a;
+    }
+    avg = sum / length;
+    return avg;
+  }
+  public int max(int[] nums){
+    
+  }
+}
 }

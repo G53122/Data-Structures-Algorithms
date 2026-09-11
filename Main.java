@@ -1,7 +1,7 @@
 //import java.util.*;
 /*
  * IT-2660 - Lab 1
- * Student Name: 
+ * Student Name: Grace Nazel
  */
 
 public class Main {
@@ -10,6 +10,9 @@ public class Main {
 
     Lab1 lab = new Lab1();
     System.out.println(lab.increment(1));
+    System.out.println(lab.max(8, 127));
+    System.out.println(lab.min(90, 46));
+
   }
 }     
 
@@ -17,5 +20,21 @@ public class Main {
 class Lab1 {
   public int increment(int num) {
     return ++num;
+  }
+  public int max(int a, int b) {
+    if (a > b) {
+        return a;
+    }
+    else {
+        return b;
+    }
+  }
+  public int min(int a, int b) {
+    if (a < b) {
+        return a;
+    }
+    else {
+        return b;
+    }
   }
 }

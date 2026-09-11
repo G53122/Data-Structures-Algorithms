@@ -6,14 +6,16 @@
 
 public class Main {
   public static void main(String[] args) {
-    System.out.println("hello, world!");
     int[] nums = {5, 9, 3, 12, 7, 3, 11, 5};
+    System.out.println("hello, world!");
     Lab1 lab = new Lab1();
-  
     System.out.println(lab.increment(1));
     System.out.println(lab.max(8, 127));
     System.out.println(lab.min(90, 46));
     System.out.println(lab.sum(nums));
+    System.out.println(lab.average(nums));
+    System.out.println(lab.max(nums));
+    System.out.println(lab.min(nums));
 
 }     
 
@@ -59,7 +61,18 @@ class Lab1 {
     return avg;
   }
   public int max(int[] nums){
-    
+  int max = nums[0];
+  for(int n = 0; n > max; n++){
+    max = n;
+  }
+  return max;
+  }
+  public int min(int[] nums){
+    int min = nums[0];
+    for(int n = 0; n < min; n++){
+      min = n;
+    }
+    return min;
   }
 }
 }

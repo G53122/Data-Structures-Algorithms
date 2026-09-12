@@ -5,7 +5,8 @@
  */
 
 public class Main {
-  public void main(String[] args) { /* Note: the word static was removed to resolve an error code. */ 
+  public void main(String[] args) { /* Note: the word static was removed to resolve an error code 
+    that came up when I added the array to this class. */ 
     int[] nums = {5, 9, 3, 12, 7, 3, 11, 5};
 
     int w = 0;

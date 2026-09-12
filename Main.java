@@ -10,11 +10,11 @@ public class Main {
 
     int w = 0;
     while(w < nums.length) {
-    System.out.println(nums[w]); //put it in the correct order.
-    w++; }
+    System.out.println(nums[w]);
+    w++; } //working
 
-    for(int f = 0; f < nums.length; f++) {
-      System.out.println(nums[f]); } // figure out how to reverse this.
+    for(int i = nums.length; i > 0; i--) {
+    System.out.println(nums[i-1]); }
 
     System.out.println(nums[0]); //working
     System.out.println(nums[nums.length - 1]); //working

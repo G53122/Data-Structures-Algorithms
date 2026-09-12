@@ -11,24 +11,24 @@ public class Main {
     int w = 0;
     while(w < nums.length) {
     System.out.println(nums[w]);
-    w++; } //working
+    w++; }
 
     for(int i = nums.length; i > 0; i--) {
     System.out.println(nums[i-1]); }
 
-    System.out.println(nums[0]); //working
-    System.out.println(nums[nums.length - 1]); //working
+    System.out.println(nums[0]);
+    System.out.println(nums[nums.length - 1]); 
 
 
     System.out.println("hello, world!");
     Lab1 lab = new Lab1();
-    System.out.println(lab.increment(1)); //working
-    System.out.println(lab.max(8, 127)); //working
-    System.out.println(lab.min(90, 46)); //working
-    System.out.println(lab.sum(nums)); //working
-    System.out.println(lab.average(nums)); //working
-    System.out.println(lab.max(nums)); //working
-    System.out.println(lab.min(nums)); //working
+    System.out.println(lab.increment(1)); 
+    System.out.println(lab.max(8, 127)); 
+    System.out.println(lab.min(90, 46));
+    System.out.println(lab.sum(nums)); 
+    System.out.println(lab.average(nums));
+    System.out.println(lab.max(nums)); 
+    System.out.println(lab.min(nums));
 
 }     
 

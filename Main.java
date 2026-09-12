@@ -1,12 +1,24 @@
-//import java.util.*;
+//import java.util.*//
 /*
  * IT-2660 - Lab 1
  * Student Name: Grace Nazel
  */
 
 public class Main {
-  public void main(String[] args) { /* Note: the word static was removed to remove an error code. */
+  public void main(String[] args) { /* Note: the word static was removed to resolve an error code. */ 
     int[] nums = {5, 9, 3, 12, 7, 3, 11, 5};
+
+    int w = 0;
+    while(w < nums.length) {
+    System.out.println(nums[w]); //put it in the correct order.
+    w++; }
+
+    for(int f = 0; f < nums.length; f++) {
+      System.out.println(nums[f]); } // figure out how to reverse this.
+
+    System.out.println(nums[0]); //working
+    System.out.println(nums[nums.length - 1]); //working
+
 
     System.out.println("hello, world!");
     Lab1 lab = new Lab1();
@@ -14,9 +26,9 @@ public class Main {
     System.out.println(lab.max(8, 127)); //working
     System.out.println(lab.min(90, 46)); //working
     System.out.println(lab.sum(nums)); //working
-    System.out.println(lab.average(nums));
-    System.out.println(lab.max(nums));
-    System.out.println(lab.min(nums));
+    System.out.println(lab.average(nums)); //working
+    System.out.println(lab.max(nums)); //working
+    System.out.println(lab.min(nums)); //working
 
 }     
 
@@ -70,7 +82,7 @@ class Lab1 {
    }
   return max;
   }
-  
+
   public int min(int[] nums){
     int min = nums[0];
     for(int y = 0; y < nums.length; y++){

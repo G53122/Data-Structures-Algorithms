@@ -1,3 +1,4 @@
+package Lab1;
 //import java.util.*//
 /*
  * IT-2660 - Lab 1

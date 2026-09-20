@@ -2,7 +2,7 @@ package Lab2;
 
  import java.util.LinkedList;
  import java.util.Queue;
-// import java.util.Stack;
+ import java.util.Stack;
  import java.util.Iterator;
 
 // Lab 2 - Lists, Stacks, and Queues
@@ -18,7 +18,7 @@ class Main {
     // No code should be added to the main method. All of your code will go into the methods in Lab2.
     lab.linkedList();
     lab.queue();
-    // lab.stack();
+    lab.stack();
   }
 }
 
@@ -78,23 +78,36 @@ class Lab2 {
 
   public void stack() {
     // 12. Create a Stack<String> called bookStack
+    Stack<String> bookStack = new Stack<>();
 
     // 13. Push the following book titles onto bookStack: "Clean Code", "Design Patterns", "Pragmatic Programmer"
+    bookStack.push("Clean Code");
+    bookStack.push("Design Patterns");
+    bookStack.push("Pragmatic Programmer");
 
     // 14. pop() 1 book off the stack. Display it's value
+    System.out.println(bookStack.pop());
 
     // 15. Use the peek() method to view the top book on the stack
+    System.out.println(bookStack.peek());
 
     // 16. push() "Web DB Technologies" onto the stack
+    bookStack.push("Web DB Technologies");
 
     // 17. Use the peek() method to view the top book on the stack
+    System.out.println(bookStack.peek());
 
     // 18. Search for "Design Patterns" in the stack. Display the results of the search.
+    System.out.println(bookStack.search("Design Patterns"));
 
     // 19. Call empty(). Output the results
+    System.out.println(bookStack.empty());
 
     // 20. Print the titles of all of the books on the stack
-    
+    for(String bookTitle : bookStack) {
+      System.out.println(bookTitle);
+    }
+    System.out.println();
   }
 
   

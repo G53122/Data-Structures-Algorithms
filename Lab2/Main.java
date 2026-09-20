@@ -1,7 +1,7 @@
 package Lab2; 
 
  import java.util.LinkedList;
-// import java.util.Queue;
+ import java.util.Queue;
 // import java.util.Stack;
  import java.util.Iterator;
 
@@ -17,7 +17,7 @@ class Main {
     // Comment/Uncomment the following 3 method calls as you work on each method.
     // No code should be added to the main method. All of your code will go into the methods in Lab2.
     lab.linkedList();
-    // lab.queue();
+    lab.queue();
     // lab.stack();
   }
 }
@@ -26,7 +26,7 @@ class Lab2 {
   public void linkedList() {
     // 1. Create a LinkedList<String> object called progLanguages
     LinkedList<String> progLanguages = new LinkedList<>();
-    
+
     // 2. Add elements to progLanguages: "Java", "Python", "JavaScript", "C++"
     progLanguages.add("Java");
     progLanguages.add("Python");
@@ -49,20 +49,31 @@ class Lab2 {
   
   public void queue() {
     // 6. Create a Queue<String> called q
+    Queue<String> q = new LinkedList<>();
 
     // 7. Add 5 first names to q.
+    q.offer("Alice");
+    q.offer("Bernard");
+    q.offer("Calvin");
+    q.offer("David");
+    q.offer("Eugene");
 
     // 8. Uncomment the following line
-    //System.out.println("Elements of queue: " + q);
+    System.out.println("Elements of queue: " + q);
 
     // 9. Remove the head of the queue and assign it to a String variable removedElement.
+    String removedElement = q.remove();
     //    Display the value of "Removed element: " + removedElement
+    System.out.println("Removed element: " + removedElement);
 
     // 10. View the head of the queue using peek(). Output it's value.
+    System.out.println(q.peek());
 
     // 11. Using for(String element : q), output all of the values in the queue
-
-    
+    for(String element : q) {
+      System.out.println(element);
+    }
+    System.out.println();
   }
 
   public void stack() {

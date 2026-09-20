@@ -1,9 +1,9 @@
-package Lab2;
+package Lab2; 
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-import java.util.Iterator;
+// import java.util.LinkedList;
+// import java.util.Queue;
+// import java.util.Stack;
+// import java.util.Iterator;
 
 // Lab 2 - Lists, Stacks, and Queues
 // Your Name: 

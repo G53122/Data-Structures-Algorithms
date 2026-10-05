@@ -5,10 +5,17 @@ public class Main {
     String bestCase = "A";
 
     // * Initialize startTime here
+    long startTime = System.nanoTime();
+
     int index = match(text, bestCase);
+
     // * Initialize endTime here
+    long endTime = System.nanoTime();
+
     // * Calculate elapsedTime here
-    
+    long  elapsedTime = startTime - endTime; 
+    System.out.println("Execution time: " + elapsedTime);
+
     if (index >= 0)
       System.out.println("best-case input matched at index " + index);
     else

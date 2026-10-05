@@ -2,7 +2,7 @@ public class Main {
   public static void main(String[] args) {
     String text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     
-    String bestCase = "";
+    String bestCase = "A";
 
     // * Initialize startTime here
     int index = match(text, bestCase);
@@ -14,7 +14,7 @@ public class Main {
     else
       System.out.println("best-case input unmatched");   
 
-    String worstCase = "";
+    String worstCase = "9";
     
     // * Initialize startTime here
     index = match(text, worstCase);

@@ -43,7 +43,8 @@ class Lab4 {
   public static ArrayList<Integer> getList() {
     ArrayList<Integer> integerList = new ArrayList<>();
     String line;
-    try (BufferedReader br = new BufferedReader(new FileReader("integers.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("Lab-4/integers.txt"))) {
+      // Edited integers.txt to Lab-4/integers.txt due to file-not-found exception.
         while ((line = br.readLine()) != null) {
             integerList.add(Integer.parseInt(line));
         }

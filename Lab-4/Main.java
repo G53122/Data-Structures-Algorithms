@@ -71,7 +71,9 @@ class Lab4 {
   // Calculates and outputs elapsed time for bubbleSort algorithm.
   long bubbleSortElapsedTime = bubbleSortEndTime - bubbleSortStartTime; 
   System.out.println("Execution time for bubble sort: " + bubbleSortElapsedTime + " nanoseconds."); 
+  
     return integerList;
+
   }
 
   public static ArrayList<Integer> getList() {

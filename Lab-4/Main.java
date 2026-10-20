@@ -21,7 +21,15 @@ public class Main {
 
 class Lab4 {
   public static ArrayList<Integer> insertionSort(ArrayList<Integer> integerList) {
-    // Step 1 - Implement insertion sort algorithm here
+        // Step 1 - Implement insertion sort algorithm here
+    for (int i = 1; i < integerList.size(); i++) {
+    int currentInt = integerList.get(i);
+    int k;
+      for (k = i - 1; k >= 0 && integerList.get(k) > currentInt; k--) {
+        integerList.set(k + 1, integerList.get(k));
+    }
+    integerList.set(k + 1, currentInt);
+    }
 
     return integerList;
   }

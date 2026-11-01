@@ -32,9 +32,14 @@ class Main {
     System.out.println("Lab5Tree output using postoder method:");
     lab5Tree.postorder();
     System.out.print(lab5Tree);
+    System.out.println();
 
     // Step 6 - Traverse and output the values using preorder
-
+    System.out.println("Lab5Tree output using preorder method:");
+    lab5Tree.preorder(); 
+    System.out.print(lab5Tree);
+    System.out.println(); 
+    
     // Step 7 - Display the result of a search for the value 36
 
     // Step 8 - Display the result of a search for the value 37

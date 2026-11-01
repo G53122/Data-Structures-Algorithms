@@ -46,7 +46,10 @@ class Main {
     System.out.println();
 
     // Step 8 - Display the result of a search for the value 37
-
+    System.out.println("Lab5Tree output of search for the value 37:");
+    System.out.print(lab5Tree.search(37)); 
+    System.out.println();
+    
     // Step 9 - Using the path() method, display the path from the root to 2
 
     // Step 10 - Display the path from the root to 34

@@ -26,10 +26,12 @@ class Main {
     System.out.println("Lab5Tree output using inorder method:");
     lab5Tree.inorder();
     System.out.print(lab5Tree);
-
-
+    System.out.println();
     
     // Step 5 - Traverse and output the values using postorder
+    System.out.println("Lab5Tree output using postoder method:");
+    lab5Tree.postorder();
+    System.out.print(lab5Tree);
 
     // Step 6 - Traverse and output the values using preorder
 

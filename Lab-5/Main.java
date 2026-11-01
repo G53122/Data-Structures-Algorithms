@@ -23,7 +23,9 @@ class Main {
     lab5Tree.delete(17);
 
     // Step 4 - Traverse and output the values using inorder (sorted)
-
+    System.out.println("Lab5Tree output using inorder method:");
+    lab5Tree.inorder();
+    System.out.print(lab5Tree);
 
 
     

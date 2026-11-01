@@ -39,8 +39,11 @@ class Main {
     lab5Tree.preorder(); 
     System.out.print(lab5Tree);
     System.out.println(); 
-    
+
     // Step 7 - Display the result of a search for the value 36
+    System.out.println("Lab5Tree output of search for the value 36:");
+    System.out.print(lab5Tree.search(36)); 
+    System.out.println();
 
     // Step 8 - Display the result of a search for the value 37
 

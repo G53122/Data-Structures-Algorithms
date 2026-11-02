@@ -23,30 +23,27 @@ class Main {
     lab5Tree.delete(17);
 
     // Step 4 - Traverse and output the values using inorder (sorted)
-    System.out.println("Lab5Tree output using inorder method:");
+    System.out.println("Lab5Tree output using inorder (sorted) method:");
     lab5Tree.inorder();
-    System.out.print(lab5Tree);
     System.out.println();
     
     // Step 5 - Traverse and output the values using postorder
     System.out.println("Lab5Tree output using postoder method:");
     lab5Tree.postorder();
-    System.out.print(lab5Tree);
     System.out.println();
 
     // Step 6 - Traverse and output the values using preorder
     System.out.println("Lab5Tree output using preorder method:");
-    lab5Tree.preorder(); 
-    System.out.print(lab5Tree);
+    lab5Tree.preorder();
     System.out.println(); 
 
     // Step 7 - Display the result of a search for the value 36
-    System.out.println("Lab5Tree output of search for the value 36:");
-    System.out.print(lab5Tree.search(36)); 
+    System.out.println("Lab5Tree output of search() for the value 36:");
+    System.out.println(lab5Tree.search(36));
     System.out.println();
 
     // Step 8 - Display the result of a search for the value 37
-    System.out.println("Lab5Tree output of search for the value 37:");
+    System.out.println("Lab5Tree output of search() for the value 37:");
     System.out.print(lab5Tree.search(37)); 
     System.out.println();
 
@@ -63,7 +60,7 @@ class Main {
     java.util.ArrayList<BST.TreeNode<Integer>> pathto34 = lab5Tree.path(34);
      for (int i = 0; pathto34 != null && i < pathto34.size(); i++) {
       System.out.print(pathto34.get(i).element+ " "); }
-      
+
     System.out.println();
   }
 }

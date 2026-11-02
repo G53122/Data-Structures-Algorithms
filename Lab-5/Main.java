@@ -49,10 +49,21 @@ class Main {
     System.out.println("Lab5Tree output of search for the value 37:");
     System.out.print(lab5Tree.search(37)); 
     System.out.println();
-    
+
     // Step 9 - Using the path() method, display the path from the root to 2
+    System.out.println("Lab5Tree output using path() method from the root to 2:");
+    java.util.ArrayList<BST.TreeNode<Integer>> pathto2 = lab5Tree.path(2);
+    for (int i = 0; pathto2 != null && i < pathto2.size(); i++) {
+      System.out.print(pathto2.get(i).element+ " "); }
+
+    System.out.println();
 
     // Step 10 - Display the path from the root to 34
-
+    System.out.println("Lab5Tree output using path() method from the root to 34:");
+    java.util.ArrayList<BST.TreeNode<Integer>> pathto34 = lab5Tree.path(34);
+     for (int i = 0; pathto34 != null && i < pathto34.size(); i++) {
+      System.out.print(pathto34.get(i).element+ " "); }
+      
+    System.out.println();
   }
 }

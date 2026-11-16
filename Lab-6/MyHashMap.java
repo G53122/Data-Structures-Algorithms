@@ -19,7 +19,28 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     // Represents the number of entries in the map.
     private int size = 0; 
 
+    // Defines the Hash Table as an array with linked-list cells.
+    LinkedList<MyMap.Entry<K,V>>[] table;
+
+    // Creates a map with the default capacity and load factor.
+    public MyHashMap() {
+        this(DEFAULT_INITIAL_CAPACITY, DEFAULT_MAX_LOAD_FACTOR); 
+    }
+
+    // Creates a map with the specified initial capacity and the default load factor.
+    public MyHashMap(int initialCapacity, float loadFactorThreshold) {
+        if (initialCapacity > MAXIMUM_CAPACITY)
+            this.capacity = MAXIMUM_CAPACITY; 
+        else 
+            this.capacity = trimToPowerOf2(initialCapacity);
+        
+        this.loadFactorThreshold = loadFactorThreshold; 
+        table = new LinkedList[capacity];
+    }
+
     
+
+
 
 
 

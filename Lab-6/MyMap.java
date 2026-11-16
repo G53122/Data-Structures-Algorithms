@@ -21,6 +21,16 @@ public boolean isEmpty();
 // Returns a set that contains all the entries in the map.
 public java.util.Set<K> keySet();
 
+// Adds an entry (key, value) to the map.
+public V put(K key, V value);
+
+// Removes the entries correlated with the given key.
+public void remove(K key);
+
+// Returns the number of mappings the map.
+public int size();
+
+
 
 
 

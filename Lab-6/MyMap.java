@@ -12,6 +12,17 @@ public boolean containsValue(V value);
 // Returns a set of all the entries in the map.
 public java.util.Set<Entry<K, V>> entrySet();
 
+// Returns the first value that matches the given key.
+public V get(K key);
+
+// Returns "true" if the map is empty.
+public boolean isEmpty();
+
+// Returns a set that contains all the entries in the map.
+public java.util.Set<K> keySet();
+
+
+
 
 
 

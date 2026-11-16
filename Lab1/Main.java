@@ -5,7 +5,11 @@ package Lab1;
  * Student Name: Grace Nazel
  */
 
+import java.util.HashMap;
+
 public class Main {
+
+
   public void main(String[] args) { /* Note: the word static was removed to resolve an error code 
     that came up when I added the array to this class. */ 
     int[] nums = {5, 9, 3, 12, 7, 3, 11, 5};
@@ -94,5 +98,5 @@ class Lab1 {
     }
     return min;
 }
-}
+} 
 }

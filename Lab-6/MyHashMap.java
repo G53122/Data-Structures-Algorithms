@@ -105,6 +105,96 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
     int bucketIndex = hash(key.hashCode());
 
+    // Creates a linked list for the bucket if it doesn't already exist.
+    if (table[bucketIndex] == null) {
+        table[bucketIndex] = new LinkedList<Entry<K, V>>();
+    }
+
+    // Adds a new entry to hashTable(index).
+    table[bucketIndex].add(new MyMap.Entry<K, V>(key, value));
+
+    size++; 
+
+    return value;
+}
+
+// Removes the entry for specified key.
+
+@Override 
+pubic void remove(K key) {
+    int bucketIndex = hash(key.hashCode(()); 
+
+// Remove the entry that matches the key from a bucket.
+if (table[bucketIndex] != null) {
+    LinkedList<Entry<K, V>> bucket = table[bucketIndex];
+    for (Entry<K, V>> bucket = table[bucketIndex])
+        if (entry.getKey().equals(key)) {
+            bucket.remove(entry);
+            size--; 
+            break;
+        }
+    }
+}
+
+// Return the number of entries in the map.
+@Override 
+public int size() {
+    return size;
+}
+
+// Return a set with all the values in the map.
+@Override 
+public java.util.Set<V> values() {
+    java.util.Set<V> set = new java.util.HashSet<>(); 
+
+    for (int i = 0; i < capacity; i++) {
+        if (table[i] != null) {
+            LinkedList<Entry<K, V>> bucket = table[i];
+            for (Entry<K, V> entry: bucket) 
+                set.add(entry.getValue());
+        }
+    }
+    return set;
+}
+
+// Hash function.
+private int hash(int hashCode) {
+    return supplementalHash(hashCode) & (capacity - 1); 
+}
+
+// Ensures that hashing is even. 
+private static int supplementalHash(int h) {
+    int capacity = 1; 
+    while (capacity < initialCapacity) {
+        capacity <<= 1; 
+    }
+    return capacity;
+}
+
+// Removes all entries from each bucket.
+private void removeEntries() {
+    for (int i = 0; i < capacity; i++) {
+        if (table[i] != null) {
+            table[i].clear(); 
+        }
+    }
+}
+
+// Rehash the map.
+private void rehash() {
+    java.util.Set<Entry<K, V>> set = entrySet(); // Gets entries
+    capacity <<= 1; // Double capacity.
+    table = new LinkedList[capacity]; // Create a new hash table.
+    size = 0; // Reset size to 0. 
+
+    for (Entry<K, V> entry: set) {
+        put(entry.getKey(), entry.getValue()); // Store to new table.
+    }
+}
+
+
+
+
 
 
 

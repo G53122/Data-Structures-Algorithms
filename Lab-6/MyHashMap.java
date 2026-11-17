@@ -37,9 +37,46 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         this.loadFactorThreshold = loadFactorThreshold; 
         table = new LinkedList[capacity];
     }
+    // Returns true if the specified key is in the map.
+    @Override 
+    public boolean containsKey(K key) {
+        if(get(key) != null)
+            return true; 
+        else 
+            return false; 
+    }
 
+    // Returns true if the specified value is in the map.
+    @Override 
+    public boolean containsValue(V value) {
+        for (int i = 0; i < capacity; i++) {
+            if (table[i] != null) {
+                LinkedList<Entry<K, V>> bucket = table[i];
+                for (Entry<K, V> entry: bucket)
+                    if (entry.getValue().equals(value))
+                        return true;
+            }
+        }
+        return false;
+    }
+
+    // Returns a set of entries in the map.
+    @Override 
+    public java.util.Set<MyMap.Entry<K, V>> entrySet() {
+        java.util.Set<MyMap.Entry<K, V>> set =
+            new java.util.HashSet<>(); 
+        
+        for (int i = 0; i < capacity; i++) {
+            if(table[i] != null) {
+                LinkedList<Entry<K, V>> bucket = table[i];
+                for (Entry<K, V> entry: bucket)
+                    set.add(entry);
+            }
+        }
+        return set; 
+    }
     
-
+      
 
 
 

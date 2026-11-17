@@ -15,5 +15,6 @@ class Main {
     System.out.println("Does the map contain the key IT-1025? " + creditHours.containsKey("IT-1025"));
     System.out.println("Does the map contain the key IT-2110? " + creditHours.containsKey("IT-2110"));
   
+    System.out.println("Values in map: " + creditHours.values()); 
   }
 }

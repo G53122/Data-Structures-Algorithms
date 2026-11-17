@@ -19,5 +19,7 @@ class Main {
     
     creditHours.remove("IT-2030");
     creditHours.remove("IT-1150");
+
+    System.out.println("Updated values in map: " + creditHours.values());
   }
 }

@@ -1,5 +1,7 @@
 import java.util.LinkedList;
 
+import javax.management.RuntimeErrorException;
+
 public class MyHashMap<K, V> implements MyMap<K, V> {
     // Defines the default size of the hash table.
     private final static int DEFAULT_INITIAL_CAPACITY = 4; 
@@ -75,8 +77,34 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         }
         return set; 
     }
-    
-      
+
+    // Adds an entry (key, value) into the map.
+    @Override
+    public V put(K key, V value) {
+        if (get(key) != null ) { // Key is already in the map.
+            int bucketIndex = hash(key.hashCode(());
+            LinkedList<Entry<K, V>> bucket = table[bucketIndex]; 
+            for (Entry<K, V> entry: bucket)
+                if (entry.getKey().equals(key)) {
+                    V oldValue = entry.getValue(); 
+                    // Replaces old value with new value.
+                    entry.value = value;
+                    // Returns old value for the key.
+                    return oldValue; 
+                }
+        }
+    }
+
+    // Checks the load factor.
+    if(size >= capacity * loadFactorThreshold) {
+        if (capacity == MAXIMUM_CAPACITY)
+            throw new RuntimeException("Exceeding maximum capacity");
+
+        rehash();
+    }
+
+    int bucketIndex = hash(key.hashCode());
+
 
 
 

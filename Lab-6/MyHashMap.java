@@ -30,6 +30,11 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     }
 
     // Creates a map with the specified initial capacity and the default load factor.
+    public MyHashMap(int initialCapacity) {
+        this(initialCapacity, DEFAULT_MAX_LOAD_FACTOR);
+    }
+
+    // Creates a map with the specified initial capacity and load factor.
     public MyHashMap(int initialCapacity, float loadFactorThreshold) {
         if (initialCapacity > MAXIMUM_CAPACITY)
             this.capacity = MAXIMUM_CAPACITY; 
@@ -39,6 +44,14 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         this.loadFactorThreshold = loadFactorThreshold; 
         table = new LinkedList[capacity];
     }
+
+    // Removes all of the entries from the map.
+    @Override 
+    public void clear() {
+        size = 0; 
+        removeEntries();
+    }
+
     // Returns true if the specified key is in the map.
     @Override 
     public boolean containsKey(K key) {
@@ -77,6 +90,41 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         }
         return set; 
     }
+
+    // Return the value that matches the specified key.
+    @Override 
+    public V get(K key) {
+        int bucketIndex = hash(key.hashCode());
+        if (table[bucketIndex] != null) {
+            LinkedList<Entry<K, V>> bucket = table[bucketIndex];
+            for (Entry<K, V> entry: bucket)
+                if (entry.getKey().equals(key))
+                    return entry.getValue(); 
+        }
+        return null;
+    }
+
+    // Returns true if map contains no entries.
+    @Override 
+    public boolean isEmpty() {
+        return size == 0; 
+    }
+
+    // Returns a set that contains all the keys in the map.
+    @Override 
+    public java.util.Set<K> keySet() {
+        java.util.Set<K> set = new java.util.HashSet<>(); 
+
+        for (int i = 0; i < capacity; i++) {
+            if (table[i] != null) {
+                LinkedList<Entry<K, V>> bucket = table[i];
+                for (Entry<K, V> entry: bucket) 
+                    set.add(entry.getKey());
+            }
+        }
+        return set;
+    }
+
 
     // Adds an entry (key, value) into the map.
     @Override

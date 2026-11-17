@@ -82,7 +82,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     @Override
     public V put(K key, V value) {
         if (get(key) != null ) { // Key is already in the map.
-            int bucketIndex = hash(key.hashCode(());
+            int bucketIndex = hash(key.hashCode());
             LinkedList<Entry<K, V>> bucket = table[bucketIndex]; 
             for (Entry<K, V> entry: bucket)
                 if (entry.getKey().equals(key)) {
@@ -93,48 +93,46 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
                     return oldValue; 
                 }
         }
-    }
 
-    // Checks the load factor.
-    if(size >= capacity * loadFactorThreshold) {
+    // Checks the laod factor 
+
+    if (size >= capacity * loadFactorThreshold) {
         if (capacity == MAXIMUM_CAPACITY)
-            throw new RuntimeException("Exceeding maximum capacity");
+            throw new RuntimeException("Exceeding maximum capacity"); 
 
-        rehash();
+        rehash(); 
     }
 
     int bucketIndex = hash(key.hashCode());
 
-    // Creates a linked list for the bucket if it doesn't already exist.
+    // Create a linked list for the bucket if it's not already created.
     if (table[bucketIndex] == null) {
         table[bucketIndex] = new LinkedList<Entry<K, V>>();
     }
 
-    // Adds a new entry to hashTable(index).
-    table[bucketIndex].add(new MyMap.Entry<K, V>(key, value));
-
-    size++; 
-
-    return value;
+    // Add a new entry (key, value) to hashTable[index].
+    table[bucketIndex].add(new MyMap.Entry<K, V>(key, value)); 
+    size++; // Increase size. 
+    return value; 
 }
 
-// Removes the entry for specified key.
-
+// Remove the entry for the specified key.
 @Override 
-pubic void remove(K key) {
-    int bucketIndex = hash(key.hashCode(()); 
+public void remove(K key) {
+    int bucketIndex = hash(key.hashCode());
 
-// Remove the entry that matches the key from a bucket.
+// Remove the entry that matches the key from the bucket.
 if (table[bucketIndex] != null) {
     LinkedList<Entry<K, V>> bucket = table[bucketIndex];
-    for (Entry<K, V>> bucket = table[bucketIndex])
+    for (Entry<K, V> entry: bucket)
         if (entry.getKey().equals(key)) {
-            bucket.remove(entry);
-            size--; 
-            break;
+            bucket.remove(entry); 
+            size--; // Decrease size.
+            break; // No need to continue in loop.
         }
-    }
 }
+}
+
 
 // Return the number of entries in the map.
 @Override 
@@ -164,9 +162,15 @@ private int hash(int hashCode) {
 
 // Ensures that hashing is even. 
 private static int supplementalHash(int h) {
+    h ^= (h >>> 20) ^ (h >>> 12);
+    return h ^ (h >>> 7) ^ (h >>> 4);
+}
+
+// Return power of 2 for initialCapacity.
+private int trimToPowerOf2(int initialCapacity) {
     int capacity = 1; 
-    while (capacity < initialCapacity) {
-        capacity <<= 1; 
+    while (capacity < initialCapacity); {
+    capacity <<= 1; 
     }
     return capacity;
 }
@@ -192,6 +196,18 @@ private void rehash() {
     }
 }
 
+@Override 
+public String toString() {
+    StringBuilder builder = new StringBuilder("["); 
+
+    for (int i = 0; i < capacity; i++) {
+        if (table[i] != null && table[i].size() > 0)
+            for (Entry<K, V> entry: table[i])
+                builder.append(entry);
+    }
+    builder.append("]");
+    return builder.toString();
+}
 
 
 

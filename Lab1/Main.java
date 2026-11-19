@@ -5,8 +5,6 @@ package Lab1;
  * Student Name: Grace Nazel
  */
 
-import java.util.HashMap;
-
 public class Main {
 
 

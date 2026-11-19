@@ -1,57 +1,58 @@
-
 public interface MyMap<K, V> {
-// Removes all values from the map.
-public void clear();
+  /** Remove all of the entries from this map */ 
+  public void clear();
+  
+  /** Return true if the specified key is in the map */
+  public boolean containsKey(K key);
+  
+  /** Return true if this map contains the specified value */ 
+  public boolean containsValue(V value);
 
-// Checks to see if the given key is in the map.
-public boolean containsKey(K key);
+  /** Return a set of entries in the map */
+  public java.util.Set<Entry<K, V>> entrySet();
 
-// Checks to see if the map contains the given value.
-public boolean containsValue(V value);
+  /** Return the first value that matches the specified key */
+  public V get(K key);
+  
+  /** Return true if this map contains no entries */
+  public boolean isEmpty();
 
-// Returns a set of all the entries in the map.
-public java.util.Set<Entry<K, V>> entrySet();
+  /** Return a set consisting of the keys in this map */
+  public java.util.Set<K> keySet();
+  
+  /** Add an entry (key, value) into the map */
+  public V put(K key, V value);
 
-// Returns the first value that matches the given key.
-public V get(K key);
+  /** Remove the entries for the specified key */
+  public void remove(K key);
 
-// Returns "true" if the map is empty.
-public boolean isEmpty();
+  /** Return the number of mappings in this map */
+  public int size();
 
-// Returns a set that contains all the keys in the map.
-public java.util.Set<K> keySet();
-
-// Adds an entry (key, value) to the map.
-public V put(K key, V value);
-
-// Removes the entries correlated with the given key.
-public void remove(K key);
-
-// Returns the number of mappings in the map.
-public int size();
-
-// Returns a set that contains all the values in the map.
-public java.util.Set<V> values();
-
-// Defines an inner class for Entry
-public static class Entry<K, V> {
-    K key; 
+  /** Return a set consisting of the values in this map */
+  public java.util.Set<V> values();
+  
+  /** Define inner class for Entry */
+  public static class Entry<K, V> {
+    K key;
     V value;
-
+    
     public Entry(K key, V value) {
-        this.key = key;
-        this.value = value;
+      this.key = key;
+      this.value = value;
     }
+    
     public K getKey() {
-        return key; 
+      return key;
     }
+    
     public V getValue() {
-        return value;
+      return value;
     }
-
+    
     @Override
     public String toString() {
-        return "[" + key + ", " + value + "]";
+      return "[" + key + ", " + value + "]";
     }
   }
-}
+}    

@@ -38,12 +38,12 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     public MyHashMap(int initialCapacity, float loadFactorThreshold) {
         if (initialCapacity > MAXIMUM_CAPACITY)
             this.capacity = MAXIMUM_CAPACITY; 
-        else 
+        else
             this.capacity = trimToPowerOf2(initialCapacity);
         
         this.loadFactorThreshold = loadFactorThreshold; 
         table = new LinkedList[capacity];
-    }
+}
 
     // Removes all of the entries from the map.
     @Override 
@@ -256,14 +256,4 @@ public String toString() {
     builder.append("]");
     return builder.toString();
 }
-
-
-
-
-
-
-
-
-
-
 }
